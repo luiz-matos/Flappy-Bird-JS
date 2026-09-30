@@ -1,6 +1,14 @@
-# Flappy Bird JS
+# 🐦 Flappy Bird JS
 
-Clone do Flappy Bird em JavaScript puro com Canvas, sem bibliotecas e sem etapa de build.
+<div align="center">
+  <img src="https://img.shields.io/badge/JavaScript-puro-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript puro">
+  <img src="https://img.shields.io/badge/HTML5-Canvas-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Canvas">
+  <img src="https://img.shields.io/badge/CSS-3-1572B6?style=for-the-badge&logo=css&logoColor=white" alt="CSS 3">
+</div>
+
+<br>
+
+> 🎯 **Clone do Flappy Bird em JavaScript puro com Canvas**, sem bibliotecas e sem etapa de build.
 
 Fiz em 2020 para estudar Canvas, acompanhando o tutorial do [Dev Soltinho](https://youtu.be/jOAU81jdi-c). Em 2026 voltei ao projeto, corrigi os bugs que tinham ficado e completei o jogo com pontuação, tela de Game Over, medalhas e suporte a celular.
 
@@ -8,7 +16,15 @@ Fiz em 2020 para estudar Canvas, acompanhando o tutorial do [Dev Soltinho](https
   <img alt="Partida mostrando a tela Get Ready, o pássaro passando pelos canos e a tela de Game Over com medalha de bronze" src="demo/flappy-bird.gif" width="320" />
 </p>
 
-## Como jogar
+## 📋 Índice
+
+- [🎮 Como jogar](#-como-jogar)
+- [✨ Recursos](#-recursos)
+- [🧩 Como o código funciona](#-como-o-código-funciona)
+- [🎓 O que aprendi em 2020](#-o-que-aprendi-em-2020)
+- [🔄 Revisitando o projeto em 2026](#-revisitando-o-projeto-em-2026)
+
+## 🎮 Como jogar
 
 O jogo não tem dependências nem build, mas usa módulos ES. O navegador não carrega módulos abrindo o `index.html` direto do disco, então é preciso servir a pasta por HTTP. Com Python, na raiz do projeto:
 
@@ -20,7 +36,7 @@ Depois abra `http://localhost:8000`. A extensão Live Server do VS Code também 
 
 Clique, toque na tela ou use Espaço, seta para cima ou W. O mesmo comando começa a partida, faz o pássaro pular e sai da tela de Game Over.
 
-## Recursos
+## ✨ Recursos
 
 - Pontuação durante a partida, com som a cada cano
 - Tela de Game Over com placar, melhor pontuação e medalha
@@ -31,7 +47,7 @@ Clique, toque na tela ou use Espaço, seta para cima ou W. O mesmo comando come�
 - Tela ajustada ao tamanho do celular
 - Mesma velocidade em qualquer monitor (60 Hz, 144 Hz etc.)
 
-## Como o código funciona
+## 🧩 Como o código funciona
 
 ```
 src/
@@ -59,7 +75,7 @@ src/
 - **Desenho.** Todas as imagens vêm de um único `sprites.png`. O `Renderer` recorta cada imagem pelas coordenadas de `sprites.js` e desenha no canvas.
 - **Loop.** O `update()` da tela ativa roda 60 vezes por segundo. O `draw()` roda a cada quadro do monitor.
 
-## O que aprendi em 2020
+## 🎓 O que aprendi em 2020
 
 Canvas foi a parte nova. Desenhar, animar e detectar colisão entre os objetos desenhados foi o desafio do projeto.
 
@@ -67,11 +83,11 @@ O Dev Soltinho quase sempre explica o que vai fazer antes de escrever o código.
 
 Também ficou claro quanta matemática um jogo simples exige. Gravidade, velocidade, intervalo entre canos e colisão são contas refeitas a cada quadro.
 
-## Revisitando o projeto em 2026
+## 🔄 Revisitando o projeto em 2026
 
 Seis anos depois, analisei o código de novo. Encontrei bugs que não tinha percebido na época e recursos que já estavam no sprite sheet e na pasta de áudio, mas nunca tinham sido usados.
 
-### Bugs corrigidos
+### 🐛 Bugs corrigidos
 
 | Bug | Causa | Correção |
 |---|---|---|
@@ -84,7 +100,7 @@ Seis anos depois, analisei o código de novo. Encontrei bugs que não tinha perc
 | Canos apareciam por cima do chão | A tela desenhava os canos depois do chão | Ordem de desenho: fundo, canos, chão e pássaro |
 | Um cano ficava parado por um quadro | `shift()` dentro do `forEach` altera o array durante a iteração e pula um item | Remoção com `filter()` depois do laço |
 
-### Decisões técnicas
+### 🧠 Decisões técnicas
 
 **Passo fixo em vez de delta time**
 
@@ -134,3 +150,13 @@ O jeito mais comum de desacoplar a velocidade do monitor é multiplicar cada mov
 - **Carregamento antes do loop.** O jogo só começa depois que o `sprites.png` termina de carregar.
 - **Sons que falham em silêncio.** `play()` devolve uma Promise que é rejeitada quando o navegador bloqueia áudio. O `.catch()` evita erro no console, e o jogo segue sem som.
 - **Mesmo resultado, pixel a pixel.** Para garantir que a refatoração não mudou o jogo, gravei a mesma partida antes e depois, com aleatoriedade fixa e jogadas automáticas. Os 920 quadros ficaram idênticos.
+
+---
+
+<div align="center">
+  <p>Desenvolvido por <strong>Luiz Matos</strong></p>
+  <p>
+    <a href="https://github.com/luiz-matos">GitHub</a> •
+    <a href="https://www.linkedin.com/in/luizeduardomatos/">LinkedIn</a>
+  </p>
+</div>
