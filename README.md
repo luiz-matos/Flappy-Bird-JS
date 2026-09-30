@@ -4,6 +4,7 @@
   <img src="https://img.shields.io/badge/JavaScript-puro-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript puro">
   <img src="https://img.shields.io/badge/HTML5-Canvas-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Canvas">
   <img src="https://img.shields.io/badge/CSS-3-1572B6?style=for-the-badge&logo=css&logoColor=white" alt="CSS 3">
+  <img src="https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow?style=for-the-badge" alt="Licença MIT">
 </div>
 
 <br>
@@ -23,6 +24,7 @@ Fiz em 2020 para estudar Canvas, acompanhando o tutorial do [Dev Soltinho](https
 - [🧩 Como o código funciona](#-como-o-código-funciona)
 - [🎓 O que aprendi em 2020](#-o-que-aprendi-em-2020)
 - [🔄 Revisitando o projeto em 2026](#-revisitando-o-projeto-em-2026)
+- [📄 Licença](#-licença)
 
 ## 🎮 Como jogar
 
@@ -150,6 +152,10 @@ O jeito mais comum de desacoplar a velocidade do monitor é multiplicar cada mov
 - **Carregamento antes do loop.** O jogo só começa depois que o `sprites.png` termina de carregar.
 - **Sons que falham em silêncio.** `play()` devolve uma Promise que é rejeitada quando o navegador bloqueia áudio. O `.catch()` evita erro no console, e o jogo segue sem som.
 - **Mesmo resultado, pixel a pixel.** Para garantir que a refatoração não mudou o jogo, gravei a mesma partida antes e depois, com aleatoriedade fixa e jogadas automáticas. Os 920 quadros ficaram idênticos.
+
+## 📄 Licença
+
+[MIT](LICENSE)
 
 ---
 
